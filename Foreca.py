@@ -153,8 +153,8 @@ def int_name(file_name, sheets, list_name):
 
 def get_foreca(url):
     driver = get_url2(url)
-    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="qc-cmp2-ui"]/div[2]/div/button[2]'))).click()
-    if WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, '//span[@class = "t"]'))):
+    WebDriverWait(driver, 120).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="qc-cmp2-ui"]/div[2]/div/button[2]'))).click()
+    if WebDriverWait(driver, 120).until(EC.visibility_of_element_located((By.XPATH, '//span[@class = "t"]'))):
         temper = driver.find_elements(By.XPATH, ('//span[@class = "t"]'))
         osadki = driver.find_elements(By.XPATH, ('//span[@class = "value rain rain_mm"]'))
         wind = driver.find_elements(By.XPATH, ('//div/span[(@class = "value wind wind_ms")]'))
@@ -179,9 +179,9 @@ def get_foreca(url):
     for t in times:
         list_time_d1.append(t.text)
 
-    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '//div[(@class = "link next")]'))).click()
+    WebDriverWait(driver, 120).until(EC.element_to_be_clickable((By.XPATH, '//div[(@class = "link next")]'))).click()
 
-    if WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, '//span[@class = "t"]'))):
+    if WebDriverWait(driver, 120).until(EC.visibility_of_element_located((By.XPATH, '//span[@class = "t"]'))):
         temper = driver.find_elements(By.XPATH, ('//span[@class = "t"]'))
         osadki = driver.find_elements(By.XPATH, ('//span[@class = "value rain rain_mm"]'))
         wind = driver.find_elements(By.XPATH, ('//div/span[(@class = "value wind wind_ms")]'))
@@ -204,9 +204,9 @@ def get_foreca(url):
     for t in times:
         list_time_d2.append(t.text)
 
-    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '//div[(@class = "link next")]'))).click()
+    WebDriverWait(driver, 120).until(EC.element_to_be_clickable((By.XPATH, '//div[(@class = "link next")]'))).click()
 
-    if WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, '//span[@class = "t"]'))):
+    if WebDriverWait(driver, 120).until(EC.visibility_of_element_located((By.XPATH, '//span[@class = "t"]'))):
         temper = driver.find_elements(By.XPATH, ('//span[@class = "t"]'))
         osadki = driver.find_elements(By.XPATH, ('//span[@class = "value rain rain_mm"]'))
         wind = driver.find_elements(By.XPATH, ('//div/span[(@class = "value wind wind_ms")]'))
@@ -229,9 +229,9 @@ def get_foreca(url):
     for t in times:
         list_time_d3.append(t.text)
     
-    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '//div[(@class = "link next")]'))).click()
+    WebDriverWait(driver, 120).until(EC.element_to_be_clickable((By.XPATH, '//div[(@class = "link next")]'))).click()
 
-    if WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, '//span[@class = "t"]'))):
+    if WebDriverWait(driver, 120).until(EC.visibility_of_element_located((By.XPATH, '//span[@class = "t"]'))):
         temper = driver.find_elements(By.XPATH, ('//span[@class = "t"]'))
         osadki = driver.find_elements(By.XPATH, ('//span[@class = "value rain rain_mm"]'))
         wind = driver.find_elements(By.XPATH, ('//div/span[(@class = "value wind wind_ms")]'))
@@ -415,7 +415,6 @@ def main():
         dfs.append(table_panda(listinfo = info, name = c.name, check = clear))
         clear = False
     progress.finish()
-
     return dfs, list_city_name
 
 

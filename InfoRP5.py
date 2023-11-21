@@ -423,7 +423,7 @@ def main():
     for c in list_city_new:
         progress.next()
         info = get_rp5_night(c.url)
-        dfs.append(table_panda(listinfo = info, name = c.name, check = clear))
+        dfs.append(table_panda(listinfo = info))
         clear = False
     progress.finish()
     return dfs, list_city_name
